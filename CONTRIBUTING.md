@@ -54,6 +54,45 @@ make setup   # deps, git hooks, registers the marketplace, installs plugins into
 - **Fill the [PR template](.github/PULL_REQUEST_TEMPLATE.md)** — what changed, how you solved it.
 - **A Maintainer review gates every merge** → [`GOVERNANCE.md`](./GOVERNANCE.md#-code-decisions).
 
+### Contributors without push access
+
+If you do not have write access to `ai-driven-dev/framework`, work from a fork:
+
+1. Fork `ai-driven-dev/framework` on GitHub.
+
+2. Clone your fork and enter the repository:
+
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/framework.git
+   cd framework
+   ```
+
+3. Add the original repository as `upstream` and fetch its branches:
+
+   ```bash
+   git remote add upstream https://github.com/ai-driven-dev/framework.git
+   git fetch upstream
+   ```
+
+4. Create your contribution branch from `upstream/next`:
+
+   ```bash
+   git switch -c docs/short-description upstream/next
+   ```
+
+   Use a suitable branch prefix for your contribution, following the routing table.
+
+5. Make your changes, run the applicable checks, and commit them.
+
+6. Push your branch to your fork:
+
+   ```bash
+   git push -u origin HEAD
+   ```
+
+7. Open a pull request from your fork's branch into `ai-driven-dev/framework:next`. Ensure the base repository is `ai-driven-dev/framework` and the base branch is `next`.
+
+
 ## 📚 Reference
 
 [`ARCHITECTURE.md`](docs/ARCHITECTURE.md) · [`CREATE_PLUGIN.md`](docs/CREATE_PLUGIN.md) · [`GLOSSARY.md`](docs/GLOSSARY.md)
